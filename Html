@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Village Cargo Driver</title>
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#87ceeb;
+text-align:center;
+}
+h1{margin:10px;}
+#game{
+width:100%;
+height:300px;
+background:#4caf50;
+position:relative;
+overflow:hidden;
+}
+#truck{
+width:60px;
+height:40px;
+background:red;
+position:absolute;
+bottom:20px;
+left:20px;
+}
+#cargo{
+width:30px;
+height:30px;
+background:yellow;
+position:absolute;
+top:100px;
+right:40px;
+}
+button{
+padding:10px 20px;
+font-size:18px;
+margin:10px;
+}
+</style>
+</head>
+<body>
+
+<h1>🚚 Village Cargo Driver</h1>
+<h2>Coins: <span id="coins">0</span></h2>
+
+<div id="game">
+<div id="truck"></div>
+<div id="cargo"></div>
+</div>
+
+<button onclick="moveTruck()">Deliver Cargo</button>
+
+<script>
+let coins = 0;
+
+function moveTruck(){
+const truck = document.getElementById("truck");
+truck.style.left = "250px";
+
+setTimeout(() => {
+coins += 10;
+document.getElementById("coins").innerText = coins;
+alert("Delivery Completed! +10 Coins");
+truck.style.left = "20px";
+},1000);
+}
+</script>
+
+</body>
+</html>
